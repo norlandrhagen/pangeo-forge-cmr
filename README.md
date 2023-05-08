@@ -16,10 +16,12 @@ from pangeo_forge_cmr import files_from_cmr
 
 # Get the GPM IMERG Late Precipitation Daily data
 shortname = 'GPM_3IMERGDL'
+version = '06'
 
 recipe = XarrayZarrRecipe( # We are making Zarr, could be something else too
     files_from_cmr( # Provide a list of files by querying CMR
         shortname,
+        version,
         nitems_per_file=1,
         concat_dim='time',  # Describe how the dataset is chunked
     ),
